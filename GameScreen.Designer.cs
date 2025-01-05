@@ -1,7 +1,7 @@
 ﻿
 namespace SnakeGame
 {
-    partial class Form1
+    partial class GameScreen
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,9 +31,9 @@ namespace SnakeGame
         {
             components = new System.ComponentModel.Container();
             pbCanvas = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            labelScore = new Label();
+            labelCurrentScore = new Label();
+            labelGameOver = new Label();
             gameTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pbCanvas).BeginInit();
             SuspendLayout();
@@ -49,39 +49,39 @@ namespace SnakeGame
             pbCanvas.Click += pictureBox1_Click;
             pbCanvas.Paint += updateGraphics;
             // 
-            // label1
+            // labelScore
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(614, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(97, 38);
-            label1.TabIndex = 1;
-            label1.Text = "Score:";
-            label1.Click += label1_Click;
+            labelScore.AutoSize = true;
+            labelScore.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            labelScore.Location = new Point(614, 55);
+            labelScore.Name = "labelScore";
+            labelScore.Size = new Size(97, 38);
+            labelScore.TabIndex = 1;
+            labelScore.Text = "Score:";
+            labelScore.Click += label1_Click;
             // 
-            // label2
+            // labelCurrentScore
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label2.Location = new Point(717, 55);
-            label2.Name = "label2";
-            label2.Size = new Size(49, 38);
-            label2.TabIndex = 2;
-            label2.Text = "00";
+            labelCurrentScore.AutoSize = true;
+            labelCurrentScore.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            labelCurrentScore.Location = new Point(717, 55);
+            labelCurrentScore.Name = "labelCurrentScore";
+            labelCurrentScore.Size = new Size(49, 38);
+            labelCurrentScore.TabIndex = 2;
+            labelCurrentScore.Text = "00";
             // 
-            // label3
+            // labelGameOver
             // 
-            label3.AutoSize = true;
-            label3.BackColor = SystemColors.ControlText;
-            label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label3.ForeColor = Color.Yellow;
-            label3.Location = new Point(215, 256);
-            label3.Name = "label3";
-            label3.Size = new Size(128, 38);
-            label3.TabIndex = 3;
-            label3.Text = "End Text";
-            label3.Click += label3_Click;
+            labelGameOver.AutoSize = true;
+            labelGameOver.BackColor = SystemColors.ControlText;
+            labelGameOver.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            labelGameOver.ForeColor = Color.Yellow;
+            labelGameOver.Location = new Point(215, 256);
+            labelGameOver.Name = "labelGameOver";
+            labelGameOver.Size = new Size(128, 38);
+            labelGameOver.TabIndex = 3;
+            labelGameOver.Text = "End Text";
+            labelGameOver.Click += label3_Click;
             // 
             // Form1
             // 
@@ -89,9 +89,9 @@ namespace SnakeGame
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(903, 614);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelGameOver);
+            Controls.Add(labelCurrentScore);
+            Controls.Add(labelScore);
             Controls.Add(pbCanvas);
             Name = "Form1";
             Text = "Snake Game";
@@ -117,9 +117,9 @@ namespace SnakeGame
         #endregion
 
         private PictureBox pbCanvas;
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label labelScore;
+        private Label labelCurrentScore;
+        private Label labelGameOver;
         private System.Windows.Forms.Timer gameTimer;
     }
 }

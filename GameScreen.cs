@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace SnakeGame
 {
-    public partial class Form1 : Form
+    public partial class GameScreen : Form
     {
         private List<Circle> Snake = new List<Circle>(); // creating an list array for the snake
         private Circle food = new Circle(); // creating a single Circle class called food
-        public Form1()
+        public GameScreen()
         {
             InitializeComponent();
             new Settings(); // linking the Settings Class to this Form
@@ -114,19 +114,19 @@ namespace SnakeGame
                 // this part will run when the game is over
                 // it will show the game over text and make the label 3 visible on the screen
                 string gameOver = "Game Over \n" + "Final Score is " + Settings.Score + "\n Press enter to Restart \n";
-                label3.Text = gameOver;
-                label3.Visible = true;
+                labelGameOver.Text = gameOver;
+                labelGameOver.Visible = true;
             }
         }
         private void startGame()
         {
             // this is the start game function
-            label3.Visible = false; // set label 3 to invisible
+            labelGameOver.Visible = false; // set label 3 to invisible
             new Settings(); // create a new instance of settings
             Snake.Clear(); // clear all snake parts
             Circle head = new Circle { X = 10, Y = 5 }; // create a new head for the snake
             Snake.Add(head); // add the gead to the snake array
-            label2.Text = Settings.Score.ToString(); // show the score to the label 2
+            labelCurrentScore.Text = Settings.Score.ToString(); // show the score to the label 2
             generateFood(); // run the generate food function
         }
         private void movePlayer()
@@ -209,7 +209,7 @@ namespace SnakeGame
             };
             Snake.Add(body); // add the part to the snakes array
             Settings.Score += Settings.Points; // increase the score for the game
-            label2.Text = Settings.Score.ToString(); // show the score on the label 2
+            labelCurrentScore.Text = Settings.Score.ToString(); // show the score on the label 2
             generateFood(); // run the generate food function
         }
         private void die()
